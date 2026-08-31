@@ -162,7 +162,7 @@ public class Workshop {
     // Método que ordena un arreglo en orden ascendente
     public int[] ordenarArreglo(int[] arreglo) {
 
-        if (arreglo == null || arreglo.length == 0) {
+        if (arreglo.length == 0) {
         return arreglo;
     }
 
@@ -185,7 +185,7 @@ public class Workshop {
     // Método que elimina los duplicados de un arreglo
     public int[] eliminarDuplicados(int[] arreglo) {
 
-        if (arreglo == null || arreglo.length == 0) {
+        if (arreglo.length == 0) {
         return arreglo;
     }
 
@@ -218,17 +218,51 @@ public class Workshop {
    }
 
     // Método que combina dos arreglos en uno solo
-    public int[] combinarArreglos(int[] arreglo1, int[] arreglo2) {
-        // TODO: Implementar el método para combinar dos arreglos en uno solo.
-        // Ejemplo: Si arreglo1 = [1, 2, 3, 4, 5] y arreglo2 = [6, 7, 8], el resultado debería ser [1, 2, 3, 4, 5, 6, 7, 8].
-        return new int[0];
+    public int[] combinarArreglos(int[] arreglo1, int[] arreglo2) {	
+        int tamano1 = arreglo1.length;
+	
+    int tamano2 = arreglo2.length;
+
+    int[] resultado = new int[tamano1 + tamano2];
+
+    for (int i = 0; i < tamano1; i++) {
+        resultado[i] = arreglo1[i];
+    }
+
+    	for (int i = 0; i < tamano2; i++) {
+        	resultado[tamano1 + i] = arreglo2[i];
+    	}
+
+    return resultado;
     }
 
     // Método que rota un arreglo n posiciones
     public int[] rotarArreglo(int[] arreglo, int posiciones) {
-        // TODO: Implementar el método para rotar un arreglo n posiciones.
-        // Ejemplo: Si arreglo = [1, 2, 3, 4, 5] y posiciones = 2, el resultado debería ser [3, 4, 5, 1, 2].
-        return new int[0];
+
+        if (arreglo.length == 0) {
+
+        return arreglo;
+    }
+
+    int n = arreglo.length;
+
+    posiciones = posiciones % n;
+
+    int[] resultado = new int[n];
+    int indResultado = 0;
+
+    	for (int i = posiciones; i < n; i++) {
+
+        	resultado[indResultado] = arreglo[i];
+        	indResultado++;
+    	}
+
+    		for (int i = 0; i < posiciones; i++) {
+        		resultado[indResultado] = arreglo[i];
+        		indResultado++;
+    		}
+
+    return resultado;
     }
 
     // Método que cuenta los caracteres en una cadena
