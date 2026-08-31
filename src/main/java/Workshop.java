@@ -162,7 +162,7 @@ public class Workshop {
     // Método que ordena un arreglo en orden ascendente
     public int[] ordenarArreglo(int[] arreglo) {
 
-        if (arreglo.length == 0) {
+        if (arreglo.length == null) {
         return arreglo;
     }
 
@@ -185,7 +185,7 @@ public class Workshop {
     // Método que elimina los duplicados de un arreglo
     public int[] eliminarDuplicados(int[] arreglo) {
 
-        if (arreglo.length == 0) {
+        if (arreglo.length == null) {
         return arreglo;
     }
 
@@ -239,7 +239,7 @@ public class Workshop {
     // Método que rota un arreglo n posiciones
     public int[] rotarArreglo(int[] arreglo, int posiciones) {
 
-        if (arreglo.length == 0) {
+        if (arreglo.length == null) {
 
         return arreglo;
     }
@@ -249,17 +249,17 @@ public class Workshop {
     posiciones = posiciones % n;
 
     int[] resultado = new int[n];
-    int indResultado = 0;
+    int indiceResultado = 0;
 
     	for (int i = posiciones; i < n; i++) {
 
-        	resultado[indResultado] = arreglo[i];
-        	indResultado++;
+        	resultado[indiceResultado] = arreglo[i];
+        	indiceResultado++;
     	}
 
     		for (int i = 0; i < posiciones; i++) {
-        		resultado[indResultado] = arreglo[i];
-        		indResultado++;
+        		resultado[indiceResultado] = arreglo[i];
+        		indiceResultado++;
     		}
 
     return resultado;
