@@ -161,17 +161,61 @@ public class Workshop {
 
     // Método que ordena un arreglo en orden ascendente
     public int[] ordenarArreglo(int[] arreglo) {
-        // TODO: Implementar el método para ordenar un arreglo en orden ascendente.
-        // Ejemplo: Si arreglo = [5, 4, 3, 2, 1], el resultado debería ser [1, 2, 3, 4, 5].
-        return new int[0];
+
+        if (arreglo == null || arreglo.length == 0) {
+        return arreglo;
+    }
+
+    int n = arreglo.length;
+    for (int i = 0; i < n - 1; i++) {	
+
+        for (int j = 0; j < n - i - 1; j++) {
+
+            if (arreglo[j] > arreglo[j + 1]) {
+
+                int temp = arreglo[j];
+                arreglo[j] = arreglo[j + 1];
+                arreglo[j + 1] = temp;
+            }
+        }
+    }
+    return arreglo;
     }
 
     // Método que elimina los duplicados de un arreglo
     public int[] eliminarDuplicados(int[] arreglo) {
-        // TODO: Implementar el método para eliminar los duplicados de un arreglo.
-        // Ejemplo: Si arreglo = [1, 2, 2, 3, 4, 4, 5], el resultado debería ser [1, 2, 3, 4, 5].
-        return new int[0];
+
+        if (arreglo == null || arreglo.length == 0) {
+        return arreglo;
     }
+
+    int[] temp = new int[arreglo.length];
+    int cantidadUnicos = 0;
+
+    
+    for (int i = 0; i < arreglo.length; i++) {
+        boolean estaRepetido = false;
+
+        for (int j = 0; j < cantidadUnicos; j++) {
+            if (arreglo[i] == temp[j]) {
+                estaRepetido = true;
+                break;
+            }
+        }
+
+        if (!estaRepetido) {
+            temp[cantidadUnicos] = arreglo[i];
+            cantidadUnicos++;
+        }
+    }
+
+    int[] resultado = new int[cantidadUnicos];
+    for (int i = 0; i < cantidadUnicos; i++) {
+        resultado[i] = temp[i];
+    }
+
+    return resultado;   
+   }
 
     // Método que combina dos arreglos en uno solo
     public int[] combinarArreglos(int[] arreglo1, int[] arreglo2) {
