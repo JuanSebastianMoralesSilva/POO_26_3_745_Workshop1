@@ -245,22 +245,16 @@ public class Workshop {
     }
 
     int n = arreglo.length;
-
     
-    posiciones = posiciones % n;
-
-    int[] resultado = new int[n];
-    int indiceResultado = 0;
-
-    
-    for (int i = posiciones; i < n; i++) {
-        resultado[indiceResultado] = arreglo[i];
-        indiceResultado++;
+    if (posiciones == 0) {
+        return arreglo;
     }
 
-        for (int i = 0; i < posiciones; i++) {
-        resultado[indiceResultado] = arreglo[i];
-        indiceResultado++;
+    int[] resultado = new int[n];
+
+        for (int i = 0; i < n; i++) {
+        int nuevaPosicion = (i + posiciones) % n;
+        resultado[nuevaPosicion] = arreglo[i];
     }
 
     return resultado;
