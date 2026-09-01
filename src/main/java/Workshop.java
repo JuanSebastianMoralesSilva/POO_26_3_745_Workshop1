@@ -185,12 +185,12 @@ public class Workshop {
     // Método que elimina los duplicados de un arreglo
     public int[] eliminarDuplicados(int[] arreglo) {
 
-        if (arreglo.length == null) {
+        if (arreglo == null || arreglo.length == 0) {
         return arreglo;
     }
 
-    int[] temp = new int[arreglo.length];
-    int cantidadUnicos = 0;
+        int[] temp = new int[arreglo.length];
+    	int cantidadUnicos = 0;
 
     
     for (int i = 0; i < arreglo.length; i++) {
@@ -214,11 +214,12 @@ public class Workshop {
         resultado[i] = temp[i];
     }
 
-    return resultado;   
+    return resultado;
    }
 
     // Método que combina dos arreglos en uno solo
-    public int[] combinarArreglos(int[] arreglo1, int[] arreglo2) {	
+    public int[] combinarArreglos(int[] arreglo1, int[] arreglo2) {
+	
         int tamano1 = arreglo1.length;
 	
     int tamano2 = arreglo2.length;
@@ -239,30 +240,31 @@ public class Workshop {
     // Método que rota un arreglo n posiciones
     public int[] rotarArreglo(int[] arreglo, int posiciones) {
 
-        if (arreglo.length == null) {
-
+        if (arreglo == null || arreglo.length == 0) {
         return arreglo;
     }
 
     int n = arreglo.length;
 
+    
     posiciones = posiciones % n;
 
     int[] resultado = new int[n];
     int indiceResultado = 0;
 
-    	for (int i = posiciones; i < n; i++) {
+    
+    for (int i = posiciones; i < n; i++) {
+        resultado[indiceResultado] = arreglo[i];
+        indiceResultado++;
+    }
 
-        	resultado[indiceResultado] = arreglo[i];
-        	indiceResultado++;
-    	}
-
-    		for (int i = 0; i < posiciones; i++) {
-        		resultado[indiceResultado] = arreglo[i];
-        		indiceResultado++;
-    		}
+        for (int i = 0; i < posiciones; i++) {
+        resultado[indiceResultado] = arreglo[i];
+        indiceResultado++;
+    }
 
     return resultado;
+
     }
 
     // Método que cuenta los caracteres en una cadena
