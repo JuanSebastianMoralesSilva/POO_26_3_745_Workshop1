@@ -162,7 +162,7 @@ public class Workshop {
     // Método que ordena un arreglo en orden ascendente
     public int[] ordenarArreglo(int[] arreglo) {
 
-        if (arreglo.length == null) {
+        if (arreglo.length == 0) {
         return arreglo;
     }
 
@@ -189,15 +189,14 @@ public class Workshop {
         return arreglo;
     }
 
-        int[] temp = new int[arreglo.length];
-    	int cantidadUnicos = 0;
+    int[] temp = new int[arreglo.length];
+    int cantidadUnicos = 0;
 
-    
     for (int i = 0; i < arreglo.length; i++) {
         boolean estaRepetido = false;
 
-        for (int j = 0; j < cantidadUnicos; j++) {
-            if (arreglo[i] == temp[j]) {
+        	for (int j = 0; j < cantidadUnicos; j++) {
+                if (arreglo[i] == temp[j]) {
                 estaRepetido = true;
                 break;
             }
@@ -215,6 +214,7 @@ public class Workshop {
     }
 
     return resultado;
+
    }
 
     // Método que combina dos arreglos en uno solo
