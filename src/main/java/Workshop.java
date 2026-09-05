@@ -274,22 +274,30 @@ public class Workshop {
         return 0;
     }
 
-    return cadena.length();
+    int contador = 0;
+    for (int i = 0; i < cadena.length(); i++) {
+        contador++;
+    }
+
+    return contador;
     }
 
     // Método que invierte una cadena
     public String invertirCadena(String cadena) {
 
-        if (cadena.length() == 0) {
+        if (cadena == null) {
         return cadena;
     }
 
-    char[] caracteres = cadena.toCharArray();
+    if (cadena.length() == 0) {
+        return cadena;
+    }
+
     String resultado = "";
 
-    // Recorremos el arreglo exactamente desde el último índice hasta el 0
-    for (int i = caracteres.length - 1; i >= 0; i--) {
-        resultado = resultado + caracteres[i];
+    // Leemos de derecha a izquierda y pegamos al final
+    for (int i = cadena.length() - 1; i >= 0; i--) {
+        resultado = resultado + cadena.charAt(i);
     }
 
     return resultado;
