@@ -372,17 +372,34 @@ public class Workshop {
 
     // Método que valida un correo electrónico
     public boolean validarCorreoElectronico(String correo) {
-        // TODO: Implementar el método para validar un correo electrónico.
-        // Ejemplo: Si correo = "test@example.com", el resultado debería ser true.
+
+        if (correo == null || correo.trim().isEmpty()) {
         return false;
+    }
+
+    String regex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+
+    return correo.matches(regex);
+
     }
 
     // Método que calcula el promedio de una lista de números
 
     public double promedioLista(List<Integer> lista) {
-        // TODO: Implementar el método para calcular el promedio de una lista de números.
-        // Ejemplo: Si lista = [1, 2, 3, 4, 5], el resultado debería ser 3.0.
+
+        if (lista == null || lista.isEmpty()) {
         return 0.0;
+    }
+
+    double suma = 0.0;
+    for (Integer numero : lista) {
+        if (numero != null) {
+            suma += numero;
+        }
+    }
+
+    return suma / lista.size();
+
     }
 
     // Método que convierte un número en su representación binaria
