@@ -266,7 +266,11 @@ public class Workshop {
     // Método que cuenta los caracteres en una cadena
     public int contarCaracteres(String cadena) {
 
-        if (cadena.length() == 0) {
+        if (cadena == null) {
+        return 0;
+    }
+
+    if (cadena.length() == 0) {
         return 0;
     }
 
@@ -280,10 +284,12 @@ public class Workshop {
         return cadena;
     }
 
+    char[] caracteres = cadena.toCharArray();
     String resultado = "";
 
-    for (int i = 0; i < cadena.length(); i++) {
-        resultado = cadena.charAt(i) + resultado;
+    // Recorremos el arreglo exactamente desde el último índice hasta el 0
+    for (int i = caracteres.length - 1; i >= 0; i--) {
+        resultado = resultado + caracteres[i];
     }
 
     return resultado;
