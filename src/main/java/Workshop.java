@@ -282,9 +282,8 @@ public class Workshop {
 
     String resultado = "";
 
-    for (int i = cadena.length() - 1; i >= 0; i--) {
-
-        resultado = resultado + cadena.charAt(i);
+    for (int i = 0; i < cadena.length(); i++) {
+        resultado = cadena.charAt(i) + resultado;
     }
 
     return resultado;
