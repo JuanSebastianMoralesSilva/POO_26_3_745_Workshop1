@@ -292,17 +292,21 @@ public class Workshop {
     // Método que verifica si una cadena es un palíndromo
     public boolean esPalindromo(String cadena) {
 
-        if (cadena == null || cadena.length() == 0) {
+        if (cadena == null || cadena.trim().isEmpty()) {
         return false;
     }
 
-    String texto = cadena.toLowerCase();
+    String textoLimpio = cadena.toLowerCase().replaceAll("[^a-zA-Z0-0]", "");
+
+    if (textoLimpio.isEmpty()) {
+        return false;
+    }
 
     int izquierda = 0;
-    int derecha = texto.length() - 1;
+    int derecha = textoLimpio.length() - 1;
 
     while (izquierda < derecha) {
-        if (texto.charAt(izquierda) != texto.charAt(derecha)) {
+        if (textoLimpio.charAt(izquierda) != textoLimpio.charAt(derecha)) {
             return false;
         }
         izquierda++;
@@ -315,25 +319,15 @@ public class Workshop {
     // Método que cuenta el número de palabras en una cadena
     public int contarPalabras(String cadena) {
 
-        if (cadena == null || cadena.length() == 0) {
+        if (cadena == null || cadena.trim().isEmpty()) {
         return 0;
     }
 
-    int contador = 0;
-    boolean enPalabra = false;
+    String texto = cadena.trim();
 
-    for (int i = 0; i < cadena.length(); i++) {
-        char c = cadena.charAt(i);
+    String[] palabras = texto.split("[\\s\\p{Punct}]+");
 
-        if (c == ' ' || c == '\t' || c == '\n' || c == '\r') {
-            enPalabra = false;
-        } else if (!enPalabra) {
-            enPalabra = true;
-            contador++;
-        }
-    }
-
-    return contador;
+    return palabras.length;
     }
 
     // Método que convierte una cadena a mayúsculas
