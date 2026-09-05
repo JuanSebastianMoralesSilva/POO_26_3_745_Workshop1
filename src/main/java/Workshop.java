@@ -498,12 +498,12 @@ public class Workshop {
 
     public String pptls2(String game[]) {
 
-        if (g == null || g.length < 2 || g[0] == null || g[1] == null) {
+        if (game == null || game.length < 2 || game[0] == null || game[1] == null) {
         return "Empate";
     }
 
-    String j1 = g[0].toUpperCase().trim();
-    String j2 = g[1].toUpperCase().trim();
+    String j1 = game[0].toUpperCase().trim();
+    String j2 = game[1].toUpperCase().trim();
 
     if (j1.equals(j2)) {
         return "Empate";
