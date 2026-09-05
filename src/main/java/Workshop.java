@@ -521,11 +521,139 @@ public class Workshop {
     }
 
     public double areaCirculo(double radio) {
+
+        if (radio < 0) {
         return 0.0;
+    }
+    double pi = 3.141592653589793;
+    return pi * radio * radio;
+
     }
 
     public String zoodiac(int day, int month) {
-        return "";
+
+        if (day < 1 || day > 31 || month < 1 || month > 12) {
+        return "Fecha inválida";
+    }
+
+    switch (month) {
+
+        case 1:
+
+            if (day < 20) {
+                return "Capricornio";
+            } else {
+                return "Acuario";
+            }
+
+        case 2:
+
+            if (day > 29) {
+                return "Fecha inválida";
+            }
+            if (day < 19) {
+                return "Acuario";
+            } else {
+                return "Piscis";
+            }
+
+        case 3:
+
+            if (day < 20) {
+                return "Piscis";
+            } else {
+                return "Aries";
+            }
+
+        case 4:
+
+            if (day > 30) {
+                return "Fecha inválida";
+            }
+            if (day < 20) {
+                return "Aries";
+            } else {
+                return "Tauro";
+            }
+
+        case 5:
+
+            if (day < 21) {
+                return "Tauro";
+            } else {
+                return "Géminis";
+            }
+
+        case 6:
+
+            if (day > 30) {
+                return "Fecha inválida";
+            }
+            if (day < 21) {
+                return "Géminis";
+            } else {
+                return "Cáncer";
+            }
+
+        case 7:
+
+            if (day < 22) {
+                return "Cáncer";
+            } else {
+                return "Leo";
+            }
+
+        case 8:
+
+            if (day < 22) {
+                return "Leo";
+            } else {
+                return "Virgo";
+            }
+
+        case 9:
+
+            if (day > 30) {
+                return "Fecha inválida";
+            }
+            if (day < 22) {
+                return "Virgo";
+            } else {
+                return "Libra";
+            }
+
+        case 10:
+
+            if (day < 22) {
+                return "Libra";
+            } else {
+                return "Escorpio";
+            }
+
+        case 11:
+
+            if (day > 30) {
+                return "Fecha inválida";
+            }
+            if (day < 21) {
+                return "Escorpio";
+            } else {
+                return "Sagitario";
+            }
+
+        case 12:
+
+            if (day < 21) {
+                return "Sagitario";
+            } else {
+                return "Capricornio";
+            }
+
+        default:
+
+            return "Fecha inválida";
+    }
+
     }
 
 
