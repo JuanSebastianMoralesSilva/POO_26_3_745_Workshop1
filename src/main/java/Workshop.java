@@ -292,28 +292,15 @@ public class Workshop {
     // Método que verifica si una cadena es un palíndromo
     public boolean esPalindromo(String cadena) {
 
-        if (cadena == null || cadena.trim().isEmpty()) {
-        return false;
-    }
+        if (cadena == null || cadena.trim().isEmpty()) return false;
+    String limpia = cadena.toLowerCase().replaceAll("[^a-z0-9]", "");
+    return limpia.equals(new StringBuilder(limpia).reverse().toString());
+}
 
-    String textoLimpio = cadena.toLowerCase().replaceAll("[^a-zA-Z0-0]", "");
-
-    if (textoLimpio.isEmpty()) {
-        return false;
-    }
-
-    int izquierda = 0;
-    int derecha = textoLimpio.length() - 1;
-
-    while (izquierda < derecha) {
-        if (textoLimpio.charAt(izquierda) != textoLimpio.charAt(derecha)) {
-            return false;
-        }
-        izquierda++;
-        derecha--;
-    }
-
-    return true;
+// Conteo de palabras perfecto usando StringTokenizer
+public int contarPalabras(String cadena) {
+    if (cadena == null || cadena.trim().isEmpty()) return 0;
+    return new java.util.StringTokenizer(cadena, " \t\n\r\f,.:;?!-").countTokens();
     }
 
     // Método que cuenta el número de palabras en una cadena
@@ -323,11 +310,10 @@ public class Workshop {
         return 0;
     }
 
-    String texto = cadena.trim();
-
-    String[] palabras = texto.split("[\\s\\p{Punct}]+");
-
-    return palabras.length;
+    // Delimitadores: espacios, tabulaciones, saltos de línea y signos de puntuación comunes
+    StringTokenizer tokenizer = new StringTokenizer(cadena, " \t\n\r\f,.:;?!-_");
+    
+    return tokenizer.countTokens();
     }
 
     // Método que convierte una cadena a mayúsculas
