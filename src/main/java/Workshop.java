@@ -274,12 +274,7 @@ public class Workshop {
         return 0;
     }
 
-    int contador = 0;
-    for (int i = 0; i < cadena.length(); i++) {
-        contador++;
-    }
-
-    return contador;
+    return cadena.length();
     }
 
     // Método que invierte una cadena
@@ -293,14 +288,20 @@ public class Workshop {
         return cadena;
     }
 
-    String resultado = "";
+    char[] caracteres = cadena.toCharArray();
+    int izquierda = 0;
+    int derecha = caracteres.length - 1;
 
-    // Leemos de derecha a izquierda y pegamos al final
-    for (int i = cadena.length() - 1; i >= 0; i--) {
-        resultado = resultado + cadena.charAt(i);
+    while (izquierda < derecha) {
+        char temporal = caracteres[izquierda];
+        caracteres[izquierda] = caracteres[derecha];
+        caracteres[derecha] = temporal;
+
+        izquierda++;
+        derecha--;
     }
 
-    return resultado;
+    return new String(caracteres);
     }
 
     // Método que verifica si una cadena es un palíndromo
