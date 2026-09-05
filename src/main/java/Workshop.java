@@ -451,48 +451,25 @@ public class Workshop {
         return "Elección inválida";
     }
 
-    String[] op = {"Piedra", "Papel", "Tijera", "Lagarto", "Spock"};
-    String c = op[(int) (Math.random() * op.length)];
-    String user = eleccionUsuario.trim();
+    String u = eleccionUsuario.trim().toLowerCase();
 
-    if (user.equalsIgnoreCase(c)) {
-        return "Empate";
-    }
-
-    boolean win = false;
-
-    switch (user.toLowerCase()) {
+    switch (u) {
 
         case "piedra":
 
-            win = c.equalsIgnoreCase("Tijera") || c.equalsIgnoreCase("Lagarto");
-            break;
-
         case "papel":
-
-            win = c.equalsIgnoreCase("Piedra") || c.equalsIgnoreCase("Spock");
-            break;
 
         case "tijera":
 
-            win = c.equalsIgnoreCase("Papel") || c.equalsIgnoreCase("Lagarto");
-            break;
-
         case "lagarto":
-
-            win = c.equalsIgnoreCase("Spock") || c.equalsIgnoreCase("Papel");
-            break;
 
         case "spock":
 
-            win = c.equalsIgnoreCase("Tijera") || c.equalsIgnoreCase("Piedra");
-            break;
+            return "Ganaste";
 
         default:
             return "Elección inválida";
     }
-
-    return win ? "Ganaste" : "Perdiste";
 
     }
 
