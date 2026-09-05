@@ -296,11 +296,13 @@ public class Workshop {
         return false;
     }
 
+    String texto = cadena.toLowerCase();
+
     int izquierda = 0;
-    int derecha = cadena.length() - 1;
+    int derecha = texto.length() - 1;
 
     while (izquierda < derecha) {
-        if (cadena.charAt(izquierda) != cadena.charAt(derecha)) {
+        if (texto.charAt(izquierda) != texto.charAt(derecha)) {
             return false;
         }
         izquierda++;
@@ -323,13 +325,11 @@ public class Workshop {
     for (int i = 0; i < cadena.length(); i++) {
         char c = cadena.charAt(i);
 
-        if (c != ' ' && !enPalabra) {
+        if (c == ' ' || c == '\t' || c == '\n' || c == '\r') {
+            enPalabra = false;
+        } else if (!enPalabra) {
             enPalabra = true;
             contador++;
-        } 
-
-        else if (c == ' ') {
-            enPalabra = false;
         }
     }
 
