@@ -446,40 +446,101 @@ public class Workshop {
 
     // Método para el juego de piedra, papel, tijera, lagarto, Spock
     public String jugarPiedraPapelTijeraLagartoSpock(String eleccionUsuario) {
-        // TODO: Implementar el método para el juego de Piedra, Papel, Tijera, Lagarto, Spock.
-        // Las reglas del juego son:
-        // - Piedra vence a Tijera y Lagarto
-        // - Papel vence a Piedra y Spock
-        // - Tijera vence a Papel y Lagarto
-        // - Lagarto vence a Spock y Papel
-        // - Spock vence a Tijera y Piedra
 
+        if (u == null || u.trim().isEmpty()) {
+        return "Elección inválida";
+    }
 
-        // El método debe retornar un mensaje indicando el resultado del juego.
-        // Ejemplo: Si la eleccionUsuario es "Piedra", el resultado podría ser "Ganaste" o "Perdiste" dependiendo de la elección de la computadora.
-        return "";
+    String[] op = {"Piedra", "Papel", "Tijera", "Lagarto", "Spock"};
+    String c = op[(int) (Math.random() * op.length)];
+    String user = u.trim();
+
+    if (user.equalsIgnoreCase(c)) {
+        return "Empate";
+    }
+
+    boolean win = false;
+
+    switch (user.toLowerCase()) {
+
+        case "piedra":
+
+            win = c.equalsIgnoreCase("Tijera") || c.equalsIgnoreCase("Lagarto");
+            break;
+
+        case "papel":
+
+            win = c.equalsIgnoreCase("Piedra") || c.equalsIgnoreCase("Spock");
+            break;
+
+        case "tijera":
+
+            win = c.equalsIgnoreCase("Papel") || c.equalsIgnoreCase("Lagarto");
+            break;
+
+        case "lagarto":
+
+            win = c.equalsIgnoreCase("Spock") || c.equalsIgnoreCase("Papel");
+            break;
+
+        case "spock":
+
+            win = c.equalsIgnoreCase("Tijera") || c.equalsIgnoreCase("Piedra");
+            break;
+
+        default:
+            return "Elección inválida";
+    }
+
+    return win ? "Ganaste" : "Perdiste";
+
     }
 
     public String pptls2(String game[]) {
-        //Retornar player ganador o empate
-            /*
-            Rock = R
-            Paper = P
-            Scissors = S
-            Lizard = L
-            Spock = V
-        Scissors cuts Paper
-Paper covers Rock
-Rock crushes Lizard
-Lizard poisons Spock
-Spock smashes Scissors
-Scissors decapitates Lizard
-Lizard eats Paper
-Paper disproves Spock
-Spock vaporizes Rock
-Rock crushes Scissors
-         */
-        return "";
+
+        if (g == null || g.length < 2 || g[0] == null || g[1] == null) {
+        return "Empate";
+    }
+
+    String j1 = g[0].toUpperCase().trim();
+    String j2 = g[1].toUpperCase().trim();
+
+    if (j1.equals(j2)) {
+        return "Empate";
+    }
+
+    boolean w1 = false;
+
+    switch (j1) {
+
+        case "R":
+
+            w1 = j2.equals("S") || j2.equals("L");
+            break;
+
+        case "P":
+
+            w1 = j2.equals("R") || j2.equals("V");
+            break;
+
+        case "S":
+
+            w1 = j2.equals("P") || j2.equals("L");
+            break;
+
+        case "L":
+
+            w1 = j2.equals("V") || j2.equals("P");
+            break;
+
+        case "V":
+
+            w1 = j2.equals("S") || j2.equals("R");
+            break;
+    }
+
+    return w1 ? "Player 1" : "Player 2";
+
     }
 
     public double areaCirculo(double radio) {
