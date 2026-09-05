@@ -266,11 +266,7 @@ public class Workshop {
     // Método que cuenta los caracteres en una cadena
     public int contarCaracteres(String cadena) {
 
-        if (cadena == null) {
-        return 0;
-    }
-
-    if (cadena.length() == 0) {
+        if (cadena == null || cadena.length() == 0) {
         return 0;
     }
 
@@ -280,28 +276,17 @@ public class Workshop {
     // Método que invierte una cadena
     public String invertirCadena(String cadena) {
 
-        if (cadena == null) {
+        if (cadena == null || cadena.length() == 0) {
         return cadena;
     }
 
-    if (cadena.length() == 0) {
-        return cadena;
+    String resultado = "";
+
+    for (int i = 0; i < cadena.length(); i++) {
+        resultado = cadena.charAt(i) + resultado;
     }
 
-    char[] caracteres = cadena.toCharArray();
-    int izquierda = 0;
-    int derecha = caracteres.length - 1;
-
-    while (izquierda < derecha) {
-        char temporal = caracteres[izquierda];
-        caracteres[izquierda] = caracteres[derecha];
-        caracteres[derecha] = temporal;
-
-        izquierda++;
-        derecha--;
-    }
-
-    return new String(caracteres);
+    return resultado;
     }
 
     // Método que verifica si una cadena es un palíndromo
