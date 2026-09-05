@@ -291,16 +291,49 @@ public class Workshop {
 
     // Método que verifica si una cadena es un palíndromo
     public boolean esPalindromo(String cadena) {
-        // TODO: Implementar el método para verificar si una cadena es un palíndromo.
-        // Ejemplo: Si cadena = "madam", el resultado debería ser true.
+
+        if (cadena == null || cadena.length() == 0) {
         return false;
+    }
+
+    int izquierda = 0;
+    int derecha = cadena.length() - 1;
+
+    while (izquierda < derecha) {
+        if (cadena.charAt(izquierda) != cadena.charAt(derecha)) {
+            return false;
+        }
+        izquierda++;
+        derecha--;
+    }
+
+    return true;
     }
 
     // Método que cuenta el número de palabras en una cadena
     public int contarPalabras(String cadena) {
-        // TODO: Implementar el método para contar el número de palabras en una cadena.
-        // Ejemplo: Si cadena = "Este es un test", el resultado debería ser 4.
+
+        if (cadena == null || cadena.length() == 0) {
         return 0;
+    }
+
+    int contador = 0;
+    boolean enPalabra = false;
+
+    for (int i = 0; i < cadena.length(); i++) {
+        char c = cadena.charAt(i);
+
+        if (c != ' ' && !enPalabra) {
+            enPalabra = true;
+            contador++;
+        } 
+
+        else if (c == ' ') {
+            enPalabra = false;
+        }
+    }
+
+    return contador;
     }
 
     // Método que convierte una cadena a mayúsculas
