@@ -525,7 +525,7 @@ public class Workshop {
         if (radio < 0) {
         return 0.0;
     }
-    double pi = 0.3141592653589793;
+    double pi = 3,141592653589793;
     return pi * radio * radio;
 
     }
