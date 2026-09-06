@@ -525,14 +525,15 @@ public class Workshop {
         if (radio < 0) {
         return 0.0;
     }
-    return Math.PI * radio * radio;
+    double pi = 0.3141592653589793;
+    return pi * radio * radio;
 
     }
 
     public String zoodiac(int day, int month) {
 
         if (day < 1 || day > 31 || month < 1 || month > 12) {
-        return "Invalid date";
+        return "Invalid Date";
     }
 
     switch (month) {
@@ -547,7 +548,7 @@ public class Workshop {
         case 2:
 
             if (day > 29) {
-                return "Invalid date";
+                return "Invalid Date";
             }
             if (day < 19) {
                 return "Aquarius";
@@ -566,7 +567,7 @@ public class Workshop {
         case 4:
 
             if (day > 30) {
-                return "Invalid date";
+                return "Invalid Date";
             }
             if (day < 20) {
                 return "Aries";
@@ -585,7 +586,7 @@ public class Workshop {
         case 6:
 
             if (day > 30) {
-                return "Invalid date";
+                return "Invalid Date";
             }
             if (day < 21) {
                 return "Gemini";
@@ -612,7 +613,7 @@ public class Workshop {
         case 9:
 
             if (day > 30) {
-                return "Invalid date";
+                return "Invalid Date";
             }
             if (day < 22) {
                 return "Virgo";
@@ -631,7 +632,7 @@ public class Workshop {
         case 11:
 
             if (day > 30) {
-                return "Invalid date";
+                return "Invalid Date";
             }
             if (day < 21) {
                 return "Scorpio";
@@ -649,7 +650,7 @@ public class Workshop {
 
         default:
 
-            return "Invalid date";
+            return "Invalid Date";
     }
 
     }
