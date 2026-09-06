@@ -532,34 +532,33 @@ public class Workshop {
     public String zoodiac(int day, int month) {
 
         if (day < 1 || day > 31 || month < 1 || month > 12) {
-        return "Invalid Date";
+        return "Invalid date";
     }
 
     switch (month) {
 
         case 1:
-
             if (day < 20) {
-                return "Capricornio";
+                return "Capricorn";
             } else {
-                return "Acuario";
+                return "Aquarius";
             }
 
         case 2:
 
             if (day > 29) {
-                return "Invalid Date";
+                return "Invalid date";
             }
             if (day < 19) {
-                return "Acuario";
+                return "Aquarius";
             } else {
-                return "Piscis";
+                return "Pisces";
             }
 
         case 3:
 
             if (day < 20) {
-                return "Piscis";
+                return "Pisces";
             } else {
                 return "Aries";
             }
@@ -567,37 +566,37 @@ public class Workshop {
         case 4:
 
             if (day > 30) {
-                return "Invalid Date";
+                return "Invalid date";
             }
             if (day < 20) {
                 return "Aries";
             } else {
-                return "Tauro";
+                return "Taurus";
             }
 
         case 5:
 
             if (day < 21) {
-                return "Tauro";
+                return "Taurus";
             } else {
-                return "Géminis";
+                return "Gemini";
             }
 
         case 6:
 
             if (day > 30) {
-                return "Invalid Date";
+                return "Invalid date";
             }
             if (day < 21) {
-                return "Géminis";
+                return "Gemini";
             } else {
-                return "Cáncer";
+                return "Cancer";
             }
 
         case 7:
 
             if (day < 22) {
-                return "Cáncer";
+                return "Cancer";
             } else {
                 return "Leo";
             }
@@ -613,7 +612,7 @@ public class Workshop {
         case 9:
 
             if (day > 30) {
-                return "Invalid Date";
+                return "Invalid date";
             }
             if (day < 22) {
                 return "Virgo";
@@ -626,31 +625,31 @@ public class Workshop {
             if (day < 22) {
                 return "Libra";
             } else {
-                return "Escorpio";
+                return "Scorpio";
             }
 
         case 11:
 
             if (day > 30) {
-                return "Invalid Date";
+                return "Invalid date";
             }
             if (day < 21) {
-                return "Escorpio";
+                return "Scorpio";
             } else {
-                return "Sagitario";
+                return "Sagittarius";
             }
 
         case 12:
 
             if (day < 21) {
-                return "Sagitario";
+                return "Sagittarius";
             } else {
-                return "Capricornio";
+                return "Capricorn";
             }
 
         default:
 
-            return "Invalid Date";
+            return "Invalid date";
     }
 
     }
