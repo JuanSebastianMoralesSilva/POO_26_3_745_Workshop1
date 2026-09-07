@@ -323,9 +323,14 @@ public class Workshop {
         return 0;
     }
 
-    String[] palabras = cadena.trim().split("\\s+");
+    String limpia = cadena.trim();
 
-    return palabras.length;
+    String[] arreglo = limpia.split("\\s+");
+
+    int total = arreglo.length;
+
+    return total;
+
     }
 
     // Método que convierte una cadena a mayúsculas
