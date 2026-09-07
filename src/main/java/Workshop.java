@@ -266,50 +266,52 @@ public class Workshop {
     // Método que cuenta los caracteres en una cadena
     public int contarCaracteres(String cadena) {
 
-        if (cadena == null || cadena.length() == 0) {
+        if (cadena == null) {
+
         return 0;
     }
 
-    return cadena.length();
+    int total = cadena.length();
+
+    return total;
+
     }
 
     // Método que invierte una cadena
     public String invertirCadena(String cadena) {
 
-        if (cadena == null || cadena.length() == 0) {
-        return cadena;
+        if (cadena == null) {
+        return null;
     }
 
-    String resultado = "";
+    String reves = "";
 
-    for (int i = 0; i < cadena.length(); i++) {
-        resultado = cadena.charAt(i) + resultado;
+    for (int posicion = cadena.length() - 1; posicion >= 0; posicion--) {
+
+        reves = reves + cadena.charAt(posicion);
     }
 
-    return resultado;
+    return reves;
     }
 
     // Método que verifica si una cadena es un palíndromo
     public boolean esPalindromo(String cadena) {
 
-        if (cadena == null || cadena.length() == 0) {
+        if (cadena == null) {
+
         return false;
     }
 
-    String texto = cadena.replace(" ", "").toLowerCase();
+    String limpia = cadena.replace(" ", "").toLowerCase();
 
-    int izquierda = 0;
-    int derecha = texto.length() - 1;
+    String reves = "";
 
-    while (izquierda < derecha) {
-        if (texto.charAt(izquierda) != texto.charAt(derecha)) {
-            return false;
-        }
-        izquierda++;
-        derecha--;
+    for (int posicion = limpia.length() - 1; posicion >= 0; posicion--) {
+
+        reves = reves + limpia.charAt(posicion);
     }
 
-    return true;
+    return limpia.equals(reves);
 
     }
 
@@ -317,12 +319,11 @@ public class Workshop {
     public int contarPalabras(String cadena) {
 
         if (cadena == null || cadena.trim().isEmpty()) {
+
         return 0;
     }
 
-    String texto = cadena.trim();
-
-    String[] palabras = texto.split("[\\s\\p{Punct}]+");
+    String[] palabras = cadena.trim().split("\\s+");
 
     return palabras.length;
     }
