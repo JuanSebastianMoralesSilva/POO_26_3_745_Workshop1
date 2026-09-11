@@ -386,11 +386,21 @@ public class Workshop {
         return false;
     }
 
-    String regex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+    String texto = correo.trim();
 
-    return correo.matches(regex);
+    int posicionArroba = texto.indexOf('@');
+    int ultimoArroba = texto.lastIndexOf('@');
+    int posicionPunto = texto.lastIndexOf('.');
 
+    if (posicionArroba > 0 
+        && posicionArroba == ultimoArroba 
+        && posicionPunto > posicionArroba + 1 
+        && posicionPunto < texto.length() - 1) {
+        
+        return true;
     }
+
+    return false;
 
     // Método que calcula el promedio de una lista de números
 
