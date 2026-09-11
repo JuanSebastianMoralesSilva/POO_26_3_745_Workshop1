@@ -267,13 +267,16 @@ public class Workshop {
     public int contarCaracteres(String cadena) {
 
         if (cadena == null) {
-
         return 0;
     }
 
-    int total = cadena.length();
+    int contador = 0;
 
-    return total;
+    for (int posicion = 0; posicion < cadena.length(); posicion++) {
+        contador++;
+    }
+
+    return contador;
 
     }
 
