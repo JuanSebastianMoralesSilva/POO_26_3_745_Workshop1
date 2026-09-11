@@ -401,6 +401,7 @@ public class Workshop {
     }
 
     return false;
+}
 
     // Método que calcula el promedio de una lista de números
 
