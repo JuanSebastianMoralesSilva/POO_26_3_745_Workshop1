@@ -272,6 +272,7 @@ public class Workshop {
 
     int contador = 0;
 
+    // Recorremos la cadena letra por letra de izquierda a derecha
     for (int posicion = 0; posicion < cadena.length(); posicion++) {
         contador++;
     }
@@ -386,22 +387,11 @@ public class Workshop {
         return false;
     }
 
-    String texto = correo.trim();
+    String regex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
 
-    int posicionArroba = texto.indexOf('@');
-    int ultimoArroba = texto.lastIndexOf('@');
-    int posicionPunto = texto.lastIndexOf('.');
+    return correo.matches(regex);
 
-    if (posicionArroba > 0 
-        && posicionArroba == ultimoArroba 
-        && posicionPunto > posicionArroba + 1 
-        && posicionPunto < texto.length() - 1) {
-        
-        return true;
     }
-
-    return false;
-}
 
     // Método que calcula el promedio de una lista de números
 
